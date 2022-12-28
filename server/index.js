@@ -11,6 +11,10 @@ import generalRoutes from "./routes/general.js";
 import managementRoutes from "./routes/management.js";
 import salesRoutes from "./routes/sales.js";
 
+/* DATA INJECTION */
+import User from "./models/User.js";
+import { dataUser } from "./data/index.js";
+
 /* CONFIGURATIONS */
 dotenv.config();
 const app = express();
@@ -30,9 +34,12 @@ app.use("/sales", salesRoutes);
 
 /* MONGOOSE SETUP */
 const PORT = process.env.PORT || 9000;
-mongoose.connect(process.env.MONGO_URL, {
+mongoose
+  .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-}).then(() => {
+  })
+  .then(() => {
     app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
-}).catch((err) => console.log(`${err} did not connect!`));
+  })
+  .catch((err) => console.log(`${err} did not connect!`));
