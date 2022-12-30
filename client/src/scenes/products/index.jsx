@@ -70,9 +70,9 @@ const Product = ({
       >
         <CardContent>
           <Typography>id : {_id}</Typography>
-          <Typography>Supply left : {_id}</Typography>
+          <Typography>Supply left : {supply}</Typography>
           <Typography>
-            Yearly Sales on This Year : {stat[0].yearlySalesTotal}
+            Yearly Sales on This Year : {stat[0].yearlyTotalSales}
           </Typography>
           <Typography>
             Yearly Units Sold on This Year : {stat[0].yearlyTotalSoldUnits}
