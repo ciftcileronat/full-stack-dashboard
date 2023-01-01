@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const TransactionSchema = new mongoose.Schema(
+const ProductStatSchema = new mongoose.Schema(
   {
     userId: String,
     cost: String,
@@ -12,5 +12,5 @@ const TransactionSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-const Transaction = mongoose.model("Transaction", TransactionSchema);
-export default Transaction;
+const ProductStat = mongoose.model("ProductStat", ProductStatSchema);
+export default ProductStat;
